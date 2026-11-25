@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V-Music | MusicHelper</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f1f0f8 0%, #ece3fb 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR SIMPLES */
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #1f2937;
+}
+.navbar .logo i {
+    background: #7c3aed;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* HERO */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 640px;
+    text-align: center;
+}
+
+.hero-content .badge {
+    display: inline-block;
+    background: #f3e8ff;
+    color: #6b21a8;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    color: #1f2937;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 span {
+    color: #9333ea;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* CARDS DE RECURSOS */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+.feature-item {
+    background: white;
+    padding: 18px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.04);
+}
+.feature-item i {
+    font-size: 20px;
+    color: #9333ea;
+    margin-bottom: 8px;
+    display: block;
+}
+.feature-item span {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 600;
+}
+
+/* BOTÕES */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #9333ea;
+    color: white;
+    box-shadow: 0 6px 15px rgba(147,51,234,.3);
+}
+.btn-primary:hover {
+    background: #7e22ce;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #9333ea;
+    border: 1px solid #d8b4fe;
+}
+.btn-secondary:hover {
+    background: #f3e8ff;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 32px; }
+    .navbar { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <i class="fas fa-music"></i>
+        <span>V-Music</span>
+    </div>
+</nav>
+
+<main class="hero">
+    <div class="hero-content">
+        <span class="badge">🎸 Feito para músicos e bandas</span>
+        <h1>Organize sua vida <span>musical</span> em um só lugar</h1>
+        <p>
+            O MusicHelper é o assistente pessoal do músico moderno: agende ensaios e
+            apresentações, guarde cifras e partituras, anote ideias e acompanhe tudo
+            o que você já realizou. Tudo simples, rápido e na palma da mão.
+        </p>
+
+        <div class="features">
+            <div class="feature-item">
+                <i class="far fa-calendar"></i>
+                <span>Agenda</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-music"></i>
+                <span>Repertório</span>
+            </div>
+            <div class="feature-item">
+                <i class="far fa-file-alt"></i>
+                <span>Notas</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-history"></i>
+                <span>Histórico</span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="cadastro" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> Criar Conta
+            </a>
+            <a href="login" class="btn btn-secondary">
+                <i class="fas fa-sign-in-alt"></i> Entrar
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    &copy; <span id="ano"></span> V-Music · MusicHelper
+</footer>
+
+<script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
